@@ -9,26 +9,22 @@ const aBox = document.querySelector('#A');
 const bBox = document.querySelector('#B');
 const cBox = document.querySelector('#C');
 
-function init(){
-  console.log('running')
-  let a = 1
-  let b = 2
-  let c = 3
-};
-
 solution.addEventListener('click', quadraticSolve)
 
 function quadraticSolve(a,b,c) {
   a = aBox.value;
   b = bBox.value;
   c = cBox.value;
+
   let resultAdd = (((-1*b) + Math.sqrt((Math.pow(b,2)-(4*a*c)))) / (2*a));
-  console.log('result add = ' + resultAdd)
+  console.log('result added = ' + resultAdd)
   let resultSub = (((-1*b) - Math.sqrt((Math.pow(b,2)-(4*a*c)))) / (2*a));
-  console.log('result add = ' + resultSub)
+  console.log('result subtracted = ' + resultSub)
+
   if (isNaN(resultAdd)===true && isNaN(resultSub) === true) {
     answer.textContent = 'Javascript cannot handle radicals well';
   }
+
   else {
   answer.textContent = ('x = ' + resultAdd + ' and ' + resultSub);
   }
